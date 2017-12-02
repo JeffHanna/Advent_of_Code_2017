@@ -47,8 +47,6 @@ For example:
 What is the solution to your new captcha?
 """
 
-import re
-
 def calculate_captcha(input, dist_to_next_digit):
     return sum(int(input[i]) for i in range(len(input)) if input[i] == input[(i + dist_to_next_digit) % len(input)])
 
