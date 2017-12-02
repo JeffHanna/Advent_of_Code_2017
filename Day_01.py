@@ -48,15 +48,16 @@ What is the solution to your new captcha?
 """
 
 def calculate_captcha(input, dist_to_next_digit):
+    '''Calculates the solution to the provided input captcha data.'''
     return sum(int(input[i]) for i in range(len(input)) if input[i] == input[(i + dist_to_next_digit) % len(input)])
 
 
 if __name__ == '__main__':
     with open('Day_01_input.txt', 'r') as f:
-        input = f.read().strip()
+        data = f.read().strip()
 
-    solution = calculate_captcha(input, 1)
+    solution = calculate_captcha(data, 1)
     print(solution)
 
-    solution = calculate_captcha(input, len(input) // 2)
+    solution = calculate_captcha(input, len(data) // 2)
     print(solution)
